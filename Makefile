@@ -33,5 +33,8 @@ clean:
 mc:
 	@rm -f nohup.out
 	nohup valgrind --tool=memcheck  --leak-check=full --verbose ./$(TARGET_TEST)&
+
+push:
+	git push -u origin master
 	
-.PHONY: all test clean mc
+.PHONY: all test clean mc push
